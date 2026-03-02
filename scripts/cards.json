@@ -1,0 +1,802 @@
+[
+  {
+    "number": 1,
+    "kimariji": "あきの",
+    "kimariji_romaji": "akino",
+    "kimariji_number": 3,
+    "kaminoku": "あきのたのかりほのいほのとまをあらみ",
+    "shimonoku": "わがころもではつゆにぬれつつ"
+  },
+  {
+    "number": 2,
+    "kimariji": "はるす",
+    "kimariji_romaji": "harusu",
+    "kimariji_number": 3,
+    "kaminoku": "はるすぎてなつきにけらししろたへの",
+    "shimonoku": "ころもほすてふあまのかぐやま"
+  },
+  {
+    "number": 3,
+    "kimariji": "あし",
+    "kimariji_romaji": "ashi",
+    "kimariji_number": 2,
+    "kaminoku": "あしびきのやまどりのをのしだりをの",
+    "shimonoku": "ながながしよをひとりかもねむ"
+  },
+  {
+    "number": 4,
+    "kimariji": "たご",
+    "kimariji_romaji": "tago",
+    "kimariji_number": 2,
+    "kaminoku": "たごのうらにうちいでてみればしろたへの",
+    "shimonoku": "ふじのたかねにゆきはふりつつ"
+  },
+  {
+    "number": 5,
+    "kimariji": "おく",
+    "kimariji_romaji": "oku",
+    "kimariji_number": 2,
+    "kaminoku": "おくやまにもみぢふみわけなくしかの",
+    "shimonoku": "こゑきくときぞあきはかなしき"
+  },
+  {
+    "number": 6,
+    "kimariji": "かさ",
+    "kimariji_romaji": "kasa",
+    "kimariji_number": 2,
+    "kaminoku": "かささぎのわたせるはしにおくしもの",
+    "shimonoku": "しろきをみればよぞふけにける"
+  },
+  {
+    "number": 7,
+    "kimariji": "あまの",
+    "kimariji_romaji": "amano",
+    "kimariji_number": 3,
+    "kaminoku": "あまのはらふりさけみればかすがなる",
+    "shimonoku": "みかさのやまにいでしつきかも"
+  },
+  {
+    "number": 8,
+    "kimariji": "わがい",
+    "kimariji_romaji": "wagai",
+    "kimariji_number": 3,
+    "kaminoku": "わがいほはみやこのたつみしかぞすむ",
+    "shimonoku": "よをうぢやまとひとはいふなり"
+  },
+  {
+    "number": 9,
+    "kimariji": "はなの",
+    "kimariji_romaji": "hanano",
+    "kimariji_number": 3,
+    "kaminoku": "はなのいろはうつりにけりないたづらに",
+    "shimonoku": "わがみよにふるながめせしまに"
+  },
+  {
+    "number": 10,
+    "kimariji": "これ",
+    "kimariji_romaji": "kore",
+    "kimariji_number": 2,
+    "kaminoku": "これやこのいくもかへるもわかれては",
+    "shimonoku": "しるもしらぬもあふさかのせき"
+  },
+  {
+    "number": 11,
+    "kimariji": "わたのはらや",
+    "kimariji_romaji": "watanoharaya",
+    "kimariji_number": 6,
+    "kaminoku": "わたのはらやそしまかけてこぎいでぬと",
+    "shimonoku": "ひとにはつげよあまのつりぶね"
+  },
+  {
+    "number": 12,
+    "kimariji": "あまつ",
+    "kimariji_romaji": "amatsu",
+    "kimariji_number": 3,
+    "kaminoku": "あまつかぜくものかよひぢふきとぢよ",
+    "shimonoku": "をとめのすがたしばしとどめむ"
+  },
+  {
+    "number": 13,
+    "kimariji": "つく",
+    "kimariji_romaji": "tsuku",
+    "kimariji_number": 2,
+    "kaminoku": "つくばねのみねよりおつるみなのがは",
+    "shimonoku": "こひぞつもりてふちとなりぬる"
+  },
+  {
+    "number": 14,
+    "kimariji": "みち",
+    "kimariji_romaji": "michi",
+    "kimariji_number": 2,
+    "kaminoku": "みちのくのしのぶもぢずりたれゆゑに",
+    "shimonoku": "みだれそめにしわれならなくに"
+  },
+  {
+    "number": 15,
+    "kimariji": "きみがためは",
+    "kimariji_romaji": "kimigatameha",
+    "kimariji_number": 6,
+    "kaminoku": "きみがためはるののにいでてわかなつむ",
+    "shimonoku": "わがころもでにゆきはふりつつ"
+  },
+  {
+    "number": 16,
+    "kimariji": "たち",
+    "kimariji_romaji": "tachi",
+    "kimariji_number": 2,
+    "kaminoku": "たちわかれいなばのやまのみねにおふる",
+    "shimonoku": "まつとしきかばいまかへりこむ"
+  },
+  {
+    "number": 17,
+    "kimariji": "ちは",
+    "kimariji_romaji": "chiha",
+    "kimariji_number": 2,
+    "kaminoku": "ちはやぶるかみよもきかずたつたがは",
+    "shimonoku": "からくれなゐにみづくくるとは"
+  },
+  {
+    "number": 18,
+    "kimariji": "す",
+    "kimariji_romaji": "su",
+    "kimariji_number": 1,
+    "kaminoku": "すみのえのきしによるなみよるさへや",
+    "shimonoku": "ゆめのかよひぢひとめよくらむ"
+  },
+  {
+    "number": 19,
+    "kimariji": "なにはが",
+    "kimariji_romaji": "nanihaga",
+    "kimariji_number": 4,
+    "kaminoku": "なにはがたみじかきあしのふしのまも",
+    "shimonoku": "あはでこのよをすぐしてよとや"
+  },
+  {
+    "number": 20,
+    "kimariji": "わび",
+    "kimariji_romaji": "wabi",
+    "kimariji_number": 2,
+    "kaminoku": "わびぬればいまはたおなじなにはなる",
+    "shimonoku": "みをつくしてもあはむとぞおもふ"
+  },
+  {
+    "number": 21,
+    "kimariji": "いまこ",
+    "kimariji_romaji": "imako",
+    "kimariji_number": 3,
+    "kaminoku": "いまこむといひしばかりにながつきの",
+    "shimonoku": "ありあけのつきをまちいでつるかな"
+  },
+  {
+    "number": 22,
+    "kimariji": "ふ",
+    "kimariji_romaji": "fu",
+    "kimariji_number": 1,
+    "kaminoku": "ふくからにあきのくさきのしをるれば",
+    "shimonoku": "むべやまかぜをあらしといふらむ"
+  },
+  {
+    "number": 23,
+    "kimariji": "つき",
+    "kimariji_romaji": "tsuki",
+    "kimariji_number": 2,
+    "kaminoku": "つきみればちぢにものこそかなしけれ",
+    "shimonoku": "わがみひとつのあきにはあらねど"
+  },
+  {
+    "number": 24,
+    "kimariji": "この",
+    "kimariji_romaji": "kono",
+    "kimariji_number": 2,
+    "kaminoku": "このたびはぬさもとりあへずたむけやま",
+    "shimonoku": "もみぢのにしきかみのまにまに"
+  },
+  {
+    "number": 25,
+    "kimariji": "なにし",
+    "kimariji_romaji": "nanishi",
+    "kimariji_number": 3,
+    "kaminoku": "なにしおはばあふさかやまのさねかづら",
+    "shimonoku": "ひとにしられでくるよしもがな"
+  },
+  {
+    "number": 26,
+    "kimariji": "をぐ",
+    "kimariji_romaji": "wogu",
+    "kimariji_number": 2,
+    "kaminoku": "をぐらやまみねのもみぢばこころあらば",
+    "shimonoku": "いまひとたびのみゆきまたなむ"
+  },
+  {
+    "number": 27,
+    "kimariji": "みかの",
+    "kimariji_romaji": "mikano",
+    "kimariji_number": 3,
+    "kaminoku": "みかのはらわきてながるるいづみがは",
+    "shimonoku": "いつみきとてかこひしかるらむ"
+  },
+  {
+    "number": 28,
+    "kimariji": "やまざ",
+    "kimariji_romaji": "yamaza",
+    "kimariji_number": 3,
+    "kaminoku": "やまざとはふゆぞさびしさまさりける",
+    "shimonoku": "ひとめもくさもかれぬとおもへば"
+  },
+  {
+    "number": 29,
+    "kimariji": "こころあ",
+    "kimariji_romaji": "kokoroa",
+    "kimariji_number": 4,
+    "kaminoku": "こころあてにをらばやをらむはつしもの",
+    "shimonoku": "おきまどはせるしらぎくのはな"
+  },
+  {
+    "number": 30,
+    "kimariji": "あら",
+    "kimariji_romaji": "ara",
+    "kimariji_number": 2,
+    "kaminoku": "ありあけのつれなくみえしわかれより",
+    "shimonoku": "あかつきばかりうきものはなし"
+  },
+  {
+    "number": 31,
+    "kimariji": "あさぼらけあ",
+    "kimariji_romaji": "asaborakea",
+    "kimariji_number": 6,
+    "kaminoku": "あさぼらけありあけのつきとみるまでに",
+    "shimonoku": "よしののさとにふれるしらゆき"
+  },
+  {
+    "number": 32,
+    "kimariji": "やまが",
+    "kimariji_romaji": "yamaga",
+    "kimariji_number": 3,
+    "kaminoku": "やまがはにかぜのかけたるしがらみは",
+    "shimonoku": "ながれもあへぬもみぢなりけり"
+  },
+  {
+    "number": 33,
+    "kimariji": "ひさ",
+    "kimariji_romaji": "hisa",
+    "kimariji_number": 2,
+    "kaminoku": "ひさかたのひかりのどけきはるのひに",
+    "shimonoku": "しづこころなくはなのちるらむ"
+  },
+  {
+    "number": 34,
+    "kimariji": "たれ",
+    "kimariji_romaji": "tare",
+    "kimariji_number": 2,
+    "kaminoku": "たれをかもしるひとにせむたかさごの",
+    "shimonoku": "まつもむかしのともならなくに"
+  },
+  {
+    "number": 35,
+    "kimariji": "ひとは",
+    "kimariji_romaji": "hitoha",
+    "kimariji_number": 3,
+    "kaminoku": "ひとはいさこころもしらずふるさとは",
+    "shimonoku": "はなぞむかしのかににほひける"
+  },
+  {
+    "number": 36,
+    "kimariji": "なつ",
+    "kimariji_romaji": "natsu",
+    "kimariji_number": 2,
+    "kaminoku": "なつのよはまだよひながらあけぬるを",
+    "shimonoku": "くものいづこにつきやどるらむ"
+  },
+  {
+    "number": 37,
+    "kimariji": "しら",
+    "kimariji_romaji": "shira",
+    "kimariji_number": 2,
+    "kaminoku": "しらつゆにかぜのふきしくあきののは",
+    "shimonoku": "つらぬきとめぬたまぞちりける"
+  },
+  {
+    "number": 38,
+    "kimariji": "わすら",
+    "kimariji_romaji": "wasura",
+    "kimariji_number": 3,
+    "kaminoku": "わすらるるみをばおもはずちかひてし",
+    "shimonoku": "ひとのいのちのをしくもあるかな"
+  },
+  {
+    "number": 39,
+    "kimariji": "あさぢ",
+    "kimariji_romaji": "asaji",
+    "kimariji_number": 3,
+    "kaminoku": "あさぢふのをののしのはらしのぶれど",
+    "shimonoku": "あまりてなどかひとのこひしき"
+  },
+  {
+    "number": 40,
+    "kimariji": "しの",
+    "kimariji_romaji": "shino",
+    "kimariji_number": 2,
+    "kaminoku": "しのぶれどいろにいでにけりわがこひは",
+    "shimonoku": "ものやおもふとひとのとふまで"
+  },
+  {
+    "number": 41,
+    "kimariji": "こひ",
+    "kimariji_romaji": "kohi",
+    "kimariji_number": 2,
+    "kaminoku": "こひすてふわがなはまだきたちにけり",
+    "shimonoku": "ひとしれずこそおもひそめしか"
+  },
+  {
+    "number": 42,
+    "kimariji": "ちぎりき",
+    "kimariji_romaji": "chigiriki",
+    "kimariji_number": 4,
+    "kaminoku": "ちぎりきなかたみにそでをしぼりつつ",
+    "shimonoku": "すゑのまつやまなみこさじとは"
+  },
+  {
+    "number": 43,
+    "kimariji": "あひ",
+    "kimariji_romaji": "ahi",
+    "kimariji_number": 2,
+    "kaminoku": "あひみてののちのこころにくらぶれば",
+    "shimonoku": "むかしはものをおもはざりけり"
+  },
+  {
+    "number": 44,
+    "kimariji": "あふこ",
+    "kimariji_romaji": "afuko",
+    "kimariji_number": 3,
+    "kaminoku": "あふことのたえてしなくはなかなかに",
+    "shimonoku": "ひとをもみをもうらみざらまし"
+  },
+  {
+    "number": 45,
+    "kimariji": "あはれ",
+    "kimariji_romaji": "ahare",
+    "kimariji_number": 3,
+    "kaminoku": "あはれともいふべきひとはおもほえで",
+    "shimonoku": "みのいたづらになりぬべきかな"
+  },
+  {
+    "number": 46,
+    "kimariji": "ゆら",
+    "kimariji_romaji": "yura",
+    "kimariji_number": 2,
+    "kaminoku": "ゆらのとをわたるふなびとかぢをたえ",
+    "shimonoku": "ゆくへもしらぬこひのみちかな"
+  },
+  {
+    "number": 47,
+    "kimariji": "やへ",
+    "kimariji_romaji": "yahe",
+    "kimariji_number": 2,
+    "kaminoku": "やへむぐらしげれるやどのさびしきに",
+    "shimonoku": "ひとこそみえねあきはきにけり"
+  },
+  {
+    "number": 48,
+    "kimariji": "かぜを",
+    "kimariji_romaji": "kazewo",
+    "kimariji_number": 3,
+    "kaminoku": "かぜをいたみいはうつなみのおのれのみ",
+    "shimonoku": "くだけてものをおもふころかな"
+  },
+  {
+    "number": 49,
+    "kimariji": "みかき",
+    "kimariji_romaji": "mikaki",
+    "kimariji_number": 3,
+    "kaminoku": "みかきもりゑじのたくひのよるはもえ",
+    "shimonoku": "ひるはきえつつものをこそおもへ"
+  },
+  {
+    "number": 50,
+    "kimariji": "きみがためお",
+    "kimariji_romaji": "kimigatameo",
+    "kimariji_number": 6,
+    "kaminoku": "きみがためをしからざりしいのちさへ",
+    "shimonoku": "ながくもがなとおもひけるかな"
+  },
+  {
+    "number": 51,
+    "kimariji": "かく",
+    "kimariji_romaji": "kaku",
+    "kimariji_number": 2,
+    "kaminoku": "かくとだにえやはいぶきのさしもぐさ",
+    "shimonoku": "さしもしらじなもゆるおもひを"
+  },
+  {
+    "number": 52,
+    "kimariji": "あけ",
+    "kimariji_romaji": "ake",
+    "kimariji_number": 2,
+    "kaminoku": "あけぬればくるるものとはしりながら",
+    "shimonoku": "なほうらめしきあさぼらけかな"
+  },
+  {
+    "number": 53,
+    "kimariji": "なげき",
+    "kimariji_romaji": "nageki",
+    "kimariji_number": 3,
+    "kaminoku": "なげきつつひとりねるよのあくるまは",
+    "shimonoku": "いかにひさしきものとかはしる"
+  },
+  {
+    "number": 54,
+    "kimariji": "わすれ",
+    "kimariji_romaji": "wasure",
+    "kimariji_number": 3,
+    "kaminoku": "わすれじのゆくすゑまではかたければ",
+    "shimonoku": "けふをかぎりのいのちともがな"
+  },
+  {
+    "number": 55,
+    "kimariji": "たき",
+    "kimariji_romaji": "taki",
+    "kimariji_number": 2,
+    "kaminoku": "たきのおとはたえてひさしくなりぬれど",
+    "shimonoku": "なこそながれてなほきこえけれ"
+  },
+  {
+    "number": 56,
+    "kimariji": "あらざ",
+    "kimariji_romaji": "araza",
+    "kimariji_number": 3,
+    "kaminoku": "あらざらむこのよのほかのおもひでに",
+    "shimonoku": "いまひとたびのあふこともがな"
+  },
+  {
+    "number": 57,
+    "kimariji": "め",
+    "kimariji_romaji": "me",
+    "kimariji_number": 1,
+    "kaminoku": "めぐりあひてみしやそれともわかぬまに",
+    "shimonoku": "くもがくれにしよはのつきかな"
+  },
+  {
+    "number": 58,
+    "kimariji": "ありま",
+    "kimariji_romaji": "arima",
+    "kimariji_number": 3,
+    "kaminoku": "ありまやまゐなのささはらかぜふけば",
+    "shimonoku": "いでそよひとをわすれやはする"
+  },
+  {
+    "number": 59,
+    "kimariji": "やす",
+    "kimariji_romaji": "yasu",
+    "kimariji_number": 2,
+    "kaminoku": "やすらはでねなましものをさよふけて",
+    "shimonoku": "かたぶくまでのつきをみしかな"
+  },
+  {
+    "number": 60,
+    "kimariji": "おおえ",
+    "kimariji_romaji": "ooe",
+    "kimariji_number": 3,
+    "kaminoku": "おほえやまいくののみちのとほければ",
+    "shimonoku": "まだふみもみずあまのはしだて"
+  },
+  {
+    "number": 61,
+    "kimariji": "いに",
+    "kimariji_romaji": "ini",
+    "kimariji_number": 2,
+    "kaminoku": "いにしへのならのみやこのやへざくら",
+    "shimonoku": "けふここのへににほひぬるかな"
+  },
+  {
+    "number": 62,
+    "kimariji": "よを",
+    "kimariji_romaji": "yowo",
+    "kimariji_number": 2,
+    "kaminoku": "よをこめてとりのそらねははかるとも",
+    "shimonoku": "よにあふさかのせきはゆるさじ"
+  },
+  {
+    "number": 63,
+    "kimariji": "いまは",
+    "kimariji_romaji": "imaha",
+    "kimariji_number": 3,
+    "kaminoku": "いまはただおもひたえなむとばかりを",
+    "shimonoku": "ひとづてならでいふよしもがな"
+  },
+  {
+    "number": 64,
+    "kimariji": "あさぼらけう",
+    "kimariji_romaji": "asaborakeu",
+    "kimariji_number": 6,
+    "kaminoku": "あさぼらけうぢのかはぎりたえだえに",
+    "shimonoku": "あらはれわたるせぜのあじろぎ"
+  },
+  {
+    "number": 65,
+    "kimariji": "うら",
+    "kimariji_romaji": "ura",
+    "kimariji_number": 2,
+    "kaminoku": "うらみわびほさぬそでだにあるものを",
+    "shimonoku": "こひにくちなむなこそをしけれ"
+  },
+  {
+    "number": 66,
+    "kimariji": "もろ",
+    "kimariji_romaji": "moro",
+    "kimariji_number": 2,
+    "kaminoku": "もろともにあはれとおもへやまざくら",
+    "shimonoku": "はなよりほかにしるひともなし"
+  },
+  {
+    "number": 67,
+    "kimariji": "はるの",
+    "kimariji_romaji": "haruno",
+    "kimariji_number": 3,
+    "kaminoku": "はるのよのゆめばかりなるたまくらに",
+    "shimonoku": "かひなくたたむなこそをしけれ"
+  },
+  {
+    "number": 68,
+    "kimariji": "こころに",
+    "kimariji_romaji": "kokoroni",
+    "kimariji_number": 4,
+    "kaminoku": "こころにもあらでうきよにながらへば",
+    "shimonoku": "こひしかるべきよはのつきかな"
+  },
+  {
+    "number": 69,
+    "kimariji": "あらし",
+    "kimariji_romaji": "arashi",
+    "kimariji_number": 3,
+    "kaminoku": "あらしふくみむろのやまのもみぢばは",
+    "shimonoku": "たつたのかはのにしきなりけり"
+  },
+  {
+    "number": 70,
+    "kimariji": "さ",
+    "kimariji_romaji": "sa",
+    "kimariji_number": 1,
+    "kaminoku": "さびしさにやどをたちいでてながむれば",
+    "shimonoku": "いづこもおなじあきのゆふぐれ"
+  },
+  {
+    "number": 71,
+    "kimariji": "ゆふ",
+    "kimariji_romaji": "yufu",
+    "kimariji_number": 2,
+    "kaminoku": "ゆふさればかどたのいなばおとづれて",
+    "shimonoku": "あしのまろやにあきかぜぞふく"
+  },
+  {
+    "number": 72,
+    "kimariji": "おと",
+    "kimariji_romaji": "oto",
+    "kimariji_number": 2,
+    "kaminoku": "おとにきくたかしのはまのあだなみは",
+    "shimonoku": "かけじやそでのぬれもこそすれ"
+  },
+  {
+    "number": 73,
+    "kimariji": "たか",
+    "kimariji_romaji": "taka",
+    "kimariji_number": 2,
+    "kaminoku": "たかさごのをのへのさくらさきにけり",
+    "shimonoku": "とやまのかすみたたずもあらなむ"
+  },
+  {
+    "number": 74,
+    "kimariji": "うか",
+    "kimariji_romaji": "uka",
+    "kimariji_number": 2,
+    "kaminoku": "うかりけるひとをはつせのやまおろしよ",
+    "shimonoku": "はげしかれとはいのらぬものを"
+  },
+  {
+    "number": 75,
+    "kimariji": "ちぎりお",
+    "kimariji_romaji": "chigirio",
+    "kimariji_number": 4,
+    "kaminoku": "ちぎりおきしさせもがつゆをいのちにて",
+    "shimonoku": "あはれことしのあきもいぬめり"
+  },
+  {
+    "number": 76,
+    "kimariji": "わたのはらこ",
+    "kimariji_romaji": "watanoharako",
+    "kimariji_number": 6,
+    "kaminoku": "わたのはらこぎいでてみればひさかたの",
+    "shimonoku": "くもゐにまがふおきつしらなみ"
+  },
+  {
+    "number": 77,
+    "kimariji": "せ",
+    "kimariji_romaji": "se",
+    "kimariji_number": 1,
+    "kaminoku": "せをはやみいはにせかるるたきがはの",
+    "shimonoku": "われてもすゑにあはむとぞおもふ"
+  },
+  {
+    "number": 78,
+    "kimariji": "あはぢ",
+    "kimariji_romaji": "ahaji",
+    "kimariji_number": 3,
+    "kaminoku": "あはぢしまかよふちどりのなくこゑに",
+    "shimonoku": "いくよねざめぬすまのせきもり"
+  },
+  {
+    "number": 79,
+    "kimariji": "あきか",
+    "kimariji_romaji": "akika",
+    "kimariji_number": 3,
+    "kaminoku": "あきかぜにたなびくくものたえまより",
+    "shimonoku": "もれいづるつきのかげのさやけさ"
+  },
+  {
+    "number": 80,
+    "kimariji": "ながか",
+    "kimariji_romaji": "nagaka",
+    "kimariji_number": 3,
+    "kaminoku": "ながからむこころもしらずくろかみの",
+    "shimonoku": "みだれてけさはものをこそおもへ"
+  },
+  {
+    "number": 81,
+    "kimariji": "ほ",
+    "kimariji_romaji": "ho",
+    "kimariji_number": 1,
+    "kaminoku": "ほととぎすなきつるかたをながむれば",
+    "shimonoku": "ただありあけのつきぞのこれる"
+  },
+  {
+    "number": 82,
+    "kimariji": "おも",
+    "kimariji_romaji": "omo",
+    "kimariji_number": 2,
+    "kaminoku": "おもひわびさてもいのちはあるものを",
+    "shimonoku": "うきにたへぬはなみだなりけり"
+  },
+  {
+    "number": 83,
+    "kimariji": "よのなかよ",
+    "kimariji_romaji": "yononakayo",
+    "kimariji_number": 5,
+    "kaminoku": "よのなかよみちこそなけれおもひいる",
+    "shimonoku": "やまのおくにもしかぞなくなる"
+  },
+  {
+    "number": 84,
+    "kimariji": "ながら",
+    "kimariji_romaji": "nagara",
+    "kimariji_number": 3,
+    "kaminoku": "ながらへばまたこのごろやしのばれむ",
+    "shimonoku": "うしとみしよぞいまはこひしき"
+  },
+  {
+    "number": 85,
+    "kimariji": "よも",
+    "kimariji_romaji": "yomo",
+    "kimariji_number": 2,
+    "kaminoku": "よもすがらものおもふころはあけやらで",
+    "shimonoku": "ねやのひまさへつれなかりけり"
+  },
+  {
+    "number": 86,
+    "kimariji": "なげけ",
+    "kimariji_romaji": "nageke",
+    "kimariji_number": 3,
+    "kaminoku": "なげけとてつきやはものをおもはする",
+    "shimonoku": "かこちがほなるわがなみだかな"
+  },
+  {
+    "number": 87,
+    "kimariji": "む",
+    "kimariji_romaji": "mu",
+    "kimariji_number": 1,
+    "kaminoku": "むらさめのつゆもまだひぬまきのはに",
+    "shimonoku": "きりたちのぼるあきのゆふぐれ"
+  },
+  {
+    "number": 88,
+    "kimariji": "なにはえ",
+    "kimariji_romaji": "nanihae",
+    "kimariji_number": 4,
+    "kaminoku": "なにはえのあしのかりねのひとよゆゑ",
+    "shimonoku": "みをつくしてやこひわたるべき"
+  },
+  {
+    "number": 89,
+    "kimariji": "たま",
+    "kimariji_romaji": "tama",
+    "kimariji_number": 2,
+    "kaminoku": "たまのをよたえなばたえねながらへば",
+    "shimonoku": "しのぶることのよわりもぞする"
+  },
+  {
+    "number": 90,
+    "kimariji": "みせ",
+    "kimariji_romaji": "mise",
+    "kimariji_number": 2,
+    "kaminoku": "みせばやなをじまのあまのそでだにも",
+    "shimonoku": "ぬれにぞぬれしいろはかはらず"
+  },
+  {
+    "number": 91,
+    "kimariji": "きり",
+    "kimariji_romaji": "kiri",
+    "kimariji_number": 2,
+    "kaminoku": "きりぎりすなくやしもよのさむしろに",
+    "shimonoku": "ころもかたしきひとりかもねむ"
+  },
+  {
+    "number": 92,
+    "kimariji": "わがそ",
+    "kimariji_romaji": "wagaso",
+    "kimariji_number": 3,
+    "kaminoku": "わがそではしほひにみえぬおきのいしの",
+    "shimonoku": "ひとこそしらねかわくまもなし"
+  },
+  {
+    "number": 93,
+    "kimariji": "よのなかは",
+    "kimariji_romaji": "yononakaha",
+    "kimariji_number": 5,
+    "kaminoku": "よのなかはつねにもがもななぎさこぐ",
+    "shimonoku": "あまのをぶねのつなでかなしも"
+  },
+  {
+    "number": 94,
+    "kimariji": "みよ",
+    "kimariji_romaji": "miyo",
+    "kimariji_number": 2,
+    "kaminoku": "みよしののやまのあきかぜさよふけて",
+    "shimonoku": "ふるさとさむくころもうつなり"
+  },
+  {
+    "number": 95,
+    "kimariji": "おほけ",
+    "kimariji_romaji": "ohoke",
+    "kimariji_number": 3,
+    "kaminoku": "おほけなくうきよのたみにおほふかな",
+    "shimonoku": "わがたつそまにすみぞめのそで"
+  },
+  {
+    "number": 96,
+    "kimariji": "はなさ",
+    "kimariji_romaji": "hanasa",
+    "kimariji_number": 3,
+    "kaminoku": "はなさそふあらしのにはのゆきならで",
+    "shimonoku": "ふりゆくものはわがみなりけり"
+  },
+  {
+    "number": 97,
+    "kimariji": "こぬ",
+    "kimariji_romaji": "konu",
+    "kimariji_number": 2,
+    "kaminoku": "こぬひとをまつほのうらのゆふなぎに",
+    "shimonoku": "やくやもしほのみもこがれつつ"
+  },
+  {
+    "number": 98,
+    "kimariji": "かぜそ",
+    "kimariji_romaji": "kazeso",
+    "kimariji_number": 3,
+    "kaminoku": "かぜそよぐならのをがはのゆふぐれは",
+    "shimonoku": "みそぎぞなつのしるしなりける"
+  },
+  {
+    "number": 99,
+    "kimariji": "ひとも",
+    "kimariji_romaji": "hitomo",
+    "kimariji_number": 3,
+    "kaminoku": "ひともをしひともうらめしあぢきなく",
+    "shimonoku": "よをおもふゆゑにものおもふみは"
+  },
+  {
+    "number": 100,
+    "kimariji": "もも",
+    "kimariji_romaji": "momo",
+    "kimariji_number": 2,
+    "kaminoku": "ももしきやふるきのきばのしのぶにも",
+    "shimonoku": "なほあまりあるむかしなりけり"
+  }
+]

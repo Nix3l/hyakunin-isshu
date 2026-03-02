@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百人一首クイズ</title>
+    <link rel="stylesheet" href="/style/common.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>百人一首暗記テスト</h1>
+        </div>
+    </header>
+    <main>
+        <div class="main-controls">
+            <div class="control-section">
+                <input type="number" id="cards-lower" min=1 max=100 value="1">
+                <p>から</p>
+                <input type="number" id="cards-upper" min=1 max=100 value="100">
+                <p>まで</p>
+            </div>
+            <div class="control-section">
+                <input type="checkbox" id="show-number">
+                <p>歌番を表示</p>
+            </div>
+            <div class="control-section">
+                <input type="checkbox" class="allow-kimari" checked>
+                <p>一字決まり</p>
+                <input type="checkbox" class="allow-kimari" checked>
+                <p>二字決まり</p>
+                <input type="checkbox" class="allow-kimari" checked>
+                <p>三字決まり</p>
+                <input type="checkbox" class="allow-kimari" checked>
+                <p>四字決まり</p>
+                <input type="checkbox" class="allow-kimari" checked>
+                <p>五字決まり</p>
+                <input type="checkbox" class="allow-kimari" checked>
+                <p>六字決まり</p>
+            </div>
+            <div class="control-section">
+                <button type="button" id="start-button">
+                    <p>開始</p>
+                </button>
+            </div>
+        </div>
+        <div id="quiz-container"></div>
+    </main>
+    <script src="/scripts/main.js" type="module"></script>
+</body>
+</html>
