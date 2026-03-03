@@ -2,13 +2,14 @@
     --container-bg: #FFFFFF;
     --card-bg:      #FFFFFF;
     --card-border:  #3fad48;
-    --correct:      #2b7293;
+    --correct:      #4bd888;
     --incorrect:    #d03237;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
+
     font-family: "IPA Gothic", sans-serif;
 }
 
@@ -29,9 +30,14 @@ header, main {
     flex-direction: column;
     align-items: center;
     padding: 32px;
+    gap: 8px;
 
     h1 {
         font-size: 2.4rem;
+    }
+
+    p {
+        font-size: 1.2rem;
     }
 }
 
@@ -73,6 +79,10 @@ header, main {
     }
 }
 
+.main-block {
+    margin: 18px 0;
+}
+
 .shimonoku-card {
     width: 210px;
     height: 300px;
@@ -85,7 +95,7 @@ header, main {
     justify-content: center;
     align-items: center;
 
-    padding: 14px 0px;
+    padding: 18px 0px;
 
     background-color: var(--card-bg);
     border: 8px solid var(--card-border);
@@ -149,8 +159,46 @@ header, main {
     }
 }
 
+@keyframes correct-pulse {
+    from {
+        background-color: var(--correct);
+        border-color: var(--correct);
+        transform: translateY(-5%);
+    }
+
+    to {
+        background-color: var(--card-bg);
+        border-color: var(--card-border);
+    }
+}
+
+@keyframes incorrect-pulse {
+    from {
+        background-color: var(--incorrect);
+        border-color: var(--incorrect);
+    }
+
+    to {
+        background-color: var(--card-bg);
+        border-color: var(--card-border);
+    }
+}
+
+@keyframes incorrect-shake {
+    0%   { transform: translateX(0);    }
+    25%  { transform: translateX(-3%);  }
+    50%  { transform: translateX(0);    }
+    75%  { transform: translateX(3%);   }
+    100% { transform: translateX(0);    }
+}
+
 .card-container.correct {
     .shimonoku-card {
+        animation-name: correct-pulse;
+        animation-duration: 1.33s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease;
+
         p.shimonoku {
             opacity: 0.33;
         }
@@ -161,11 +209,53 @@ header, main {
     }
 }
 
+.card-container.incorrect .shimonoku-card {
+    animation-name: incorrect-pulse, incorrect-shake;
+    animation-duration: 1.33s, 0.3s;
+    animation-iteration-count: 1, 2;
+    animation-timing-function: ease, ease-out;
+}
+
 #quiz-container {
+    width: 100%;
+
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     gap: 12px;
+
+    .quiz-inner {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .quiz-results {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .results-header {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-column-gap: 12px;
+            text-align: right;
+            font-size: 1.4rem;
+        }
+    }
+
+    .quiz-footer {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+    }
 }
