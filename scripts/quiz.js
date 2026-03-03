@@ -3,6 +3,8 @@ import { createNode, createNodeWithInner } from "/scripts/utils.js";
 let active = false;
 let activeContainer = null;
 
+// id probably do this whole thing differently if i were to refactor this.
+// maybe make these into an array of objects rather than a bunch of separate arrays
 let cardData   = [];
 let cardBatch  = [];
 let inputBatch = [];
@@ -34,6 +36,7 @@ function markCardIncorrect(i) {
     inputBatch[i].value = "";
     inputBatch[i].addEventListener("focus", () => {
         cardBatch[i].classList.remove("incorrect");
+        inputBatch[i].removeEventListener("focus");
     });
 
     incorrect.push(i);
@@ -130,6 +133,7 @@ export function finishQuiz() {
 
     let result = Math.round(correct.length / cardData.length * 100);
 
+    // wow is this some horrible code lol
     let totalKimariCorrect = [0,0,0,0,0,0];
     let totalKimari        = [0,0,0,0,0,0];
 
