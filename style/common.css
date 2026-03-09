@@ -1,56 +1,136 @@
 :root {
+    --navbar-bg: #ffffff;
+    --navbar-fg: #000000;
+
+    --control-bg: #ffffff;
+    --control-bg-enabled: #74d7c5;
+    --control-border: #05342b;
+
     --container-bg: #FFFFFF;
     --card-bg:      #FFFFFF;
     --card-border:  #3fad48;
     --correct:      #4bd888;
     --incorrect:    #d03237;
+
+    --font-serif:      "Sawarabi Mincho";
+    --font-sans-serif: "Noto Sans JP";
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
 
-    font-family: "IPA Gothic", sans-serif;
+    font-family: var(--font-sans-serif), sans-serif;
 }
 
 body {
     min-height: 100vh;
+    font-size: 20px;
 }
 
 header, main {
-    width: 80%;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+main {
+    width: 80%;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
 .header-container {
+    width: 100%;
+
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    padding: 32px;
-    gap: 8px;
 
-    h1 {
-        font-size: 2.4rem;
+    padding: 12px 24px;
+
+    background-color: var(--navbar-bg);
+
+    .nav-section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 24px;
+
+        * {
+            color: var(--navbar-fg);
+        }
+
+        h1 {
+            font-size: 2.4rem;
+        }
+
+        a, p {
+            font-size: 1.5rem;
+        }
     }
+}
 
-    p {
-        font-size: 1.2rem;
+.checkbox-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+
+    background-color: var(--control-bg);
+
+    cursor: pointer;
+}
+
+input[type="checkbox"].custom-checkbox {
+    display: none;
+}
+
+input.custom-checkbox:checked + .checkbox-container {
+    background-color: var(--control-bg-enabled);
+}
+
+button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 8px;
+
+    cursor: pointer;
+
+    background-color: #ccc;
+    border: none;
+
+    * {
+        color: inherit;
+        font-size: inherit;
     }
 }
 
 .main-controls {
+    width: 100%;
+    min-height: 52px;
+
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
 
     .control-section {
+        height: 100%;
+
+        padding: 0 8px;
+        gap: 4px;
+
         display: flex;
         flex-direction: row;
-        gap: 4px;
+        align-items: center;
 
         font-size: 1.5rem;
 
@@ -67,27 +147,43 @@ header, main {
             transform: scale(1.33);
             margin: 0 4px;
         }
+    }
 
-        #start-button {
-            width: 72px;
-            height: 32px;
+    #kimari-section {
+        gap: 0;
+    }
 
-            p {
-                font-size: 1.33rem;
-            }
+    #amount-section {
+        width: 6em;
+        text-align: center;
+
+        p {
+            width: 100%;
         }
+    }
+
+    #button-section {
+        button {
+            font-size: 0.8em;
+        }
+    }
+
+    .control-divider {
+        height: 1.4em;
+        width: 4px;
+        background-color: #ccc;
     }
 }
 
 .main-block {
-    margin: 18px 0;
+    margin-bottom: 18px;
 }
 
 .shimonoku-card {
     width: 210px;
     height: 300px;
     position: relative;
-    overflow-x: hidden; /* exactly ONE card doesnt fit like the others. fun. */
+    overflow: hidden; /* exactly ONE card doesnt fit like the others. fun. */
 
     display: flex;
     flex-direction: row;
@@ -103,36 +199,59 @@ header, main {
     p.shimonoku {
         width: 100%;
         height: 100%;
+
+        transform: translateY(4%);
+
+        font-family: var(--font-serif);
         writing-mode: vertical-rl;
         text-orientation: upright;
-        letter-spacing: 16px;
+
         font-size: 32px;
-        line-height: 2;
+        letter-spacing: 16px;
+        line-height: 2em;
     }
 
     p.kimariji {
         display: none;
         position: absolute;
+
+        transform: translateY(6%);
+
+        font-family: var(--font-serif);
         writing-mode: vertical-rl;
         text-orientation: upright;
-        letter-spacing: 16px;
+
+        text-align: center;
+
         font-size: 72px;
+        letter-spacing: 16px;
         line-height: 1.2em;
+
         color: var(--incorrect);
         opacity: 0.80;
         font-weight: bold;
-        text-align: center;
     }
 
     p.number-indicator {
         position: absolute;
         bottom: 6px;
-        left: 6px;
-        font-size: 20px;
+        left: 12px;
+
+        font-size: 18px;
     }
 }
 
-.card-container {
+.shimonoku-card.solved {
+    p.shimonoku {
+        opacity: 0.33;
+    }
+
+    p.kimariji {
+        display: block;
+    }
+}
+
+.quiz-card-container {
     width: 258px;
 
     padding: 24px;
@@ -185,14 +304,14 @@ header, main {
 }
 
 @keyframes incorrect-shake {
-    0%   { transform: translateX(0);    }
-    25%  { transform: translateX(-3%);  }
-    50%  { transform: translateX(0);    }
-    75%  { transform: translateX(3%);   }
-    100% { transform: translateX(0);    }
+    0%   { transform: translateX(0);   }
+    25%  { transform: translateX(-3%); }
+    50%  { transform: translateX(0);   }
+    75%  { transform: translateX(3%);  }
+    100% { transform: translateX(0);   }
 }
 
-.card-container.correct {
+.quiz-card-container.correct {
     .shimonoku-card {
         animation-name: correct-pulse;
         animation-duration: 1.33s;
@@ -209,7 +328,7 @@ header, main {
     }
 }
 
-.card-container.incorrect .shimonoku-card {
+.quiz-card-container.incorrect .shimonoku-card {
     animation-name: incorrect-pulse, incorrect-shake;
     animation-duration: 1.33s, 0.3s;
     animation-iteration-count: 1, 2;

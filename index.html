@@ -1,18 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="jp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>百人一首クイズ</title>
     <link rel="stylesheet" href="/style/common.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <h1>百人一首暗記テスト</h1>
-            <p>下の句を見て、その決まり字を思い出す練習</p>
-        </div>
-    </header>
     <main>
         <div class="main-block main-controls">
             <div class="control-section">
@@ -21,30 +17,56 @@
                 <input type="number" class="control" id="cards-upper" min=1 max=100 value="100">
                 <p>まで</p>
             </div>
+            <div class="control-divider"></div>
             <div class="control-section">
                 <input type="checkbox" id="show-number">
                 <p>歌番を表示</p>
             </div>
-            <div class="control-section">
-                <input type="checkbox" class="control allow-kimari" checked>
-                <p>一字決まり</p>
-                <input type="checkbox" class="control allow-kimari" checked>
-                <p>二字決まり</p>
-                <input type="checkbox" class="control allow-kimari" checked>
-                <p>三字決まり</p>
-                <input type="checkbox" class="control allow-kimari" checked>
-                <p>四字決まり</p>
-                <input type="checkbox" class="control allow-kimari" checked>
-                <p>五字決まり</p>
-                <input type="checkbox" class="control allow-kimari" checked>
-                <p>六字決まり</p>
+            <div class="control-divider"></div>
+            <div id="kimari-section" class="control-section">
+                <p>決まり&nbsp;</p>
+
+                <input type="checkbox" id="1-kimari" class="custom-checkbox control allow-kimari" checked>
+                <label class="checkbox-container" for="1-kimari">
+                    <p>一字</p>
+                </label>
+
+                <input type="checkbox" id="2-kimari" class="custom-checkbox control allow-kimari" checked>
+                <label class="checkbox-container" for="2-kimari">
+                    <p>二字</p>
+                </label>
+
+                <input type="checkbox" id="3-kimari" class="custom-checkbox control allow-kimari" checked>
+                <label class="checkbox-container" for="3-kimari">
+                    <p>三字</p>
+                </label>
+
+                <input type="checkbox" id="4-kimari" class="custom-checkbox control allow-kimari" checked>
+                <label class="checkbox-container" for="4-kimari">
+                    <p>四字</p>
+                </label>
+
+                <input type="checkbox" id="5-kimari" class="custom-checkbox control allow-kimari" checked>
+                <label class="checkbox-container" for="5-kimari">
+                    <p>五字</p>
+                </label>
+
+                <input type="checkbox" id="6-kimari" class="custom-checkbox control allow-kimari" checked>
+                <label class="checkbox-container" for="6-kimari">
+                    <p>六字</p>
+                </label>
             </div>
-            <div class="control-section">
+            <div class="control-divider"></div>
+            <div id="amount-section" class="control-section">
                 <p>総枚数: <span id="card-amount-indicator">100</span></p>
             </div>
-            <div class="control-section">
-                <button type="button" id="start-button">
-                    <p>開始</p>
+            <div class="control-divider"></div>
+            <div id="button-section" class="control-section">
+                <button type="button" id="quiz-start-button">
+                    <p>テストを開始</p>
+                </button>
+                <button type="button" id="show-button">
+                    <p>札を一覧</p>
                 </button>
             </div>
         </div>

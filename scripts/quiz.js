@@ -1,4 +1,5 @@
-import { createNode, createNodeWithInner } from "/scripts/utils.js";
+import * as utils from "./utils.js";
+import { createShimonokuCard } from "./generator.js";
 
 let active = false;
 let activeContainer = null;
@@ -68,26 +69,18 @@ function createQuizCards(container, data, showNumber) {
     inputBatch = [];
 
     data.forEach((curr, index) => {
-        let card = createNode("div", "card-container");
+        let card = utils.createChildNode(container, "div", "quiz-card-container");
 
-        let shimonokuContainer = createNode("div", "shimonoku-card");
-        shimonokuContainer.appendChild(createNodeWithInner("p", curr.shimonoku, "shimonoku"));
-        shimonokuContainer.appendChild(createNodeWithInner("p", curr.kimariji, "kimariji"));
-        if(showNumber) shimonokuContainer.appendChild(createNodeWithInner("p", curr.number, "number-indicator"));
+        card.appendChild(createShimonokuCard(curr));
 
-        let inputContainer = createNode("div", "kimariji-input");
-        let input = document.createElement("input");
+        let inputContainer = utils.createChildNode(card, "div", "kimariji-input");
+        let input = utils.createChildNode(inputContainer, "input", "");
         input.setAttribute("type",           "text");
         input.setAttribute("autocomplete",   "off");
         input.setAttribute("autocorrect",    "off");
         input.setAttribute("autocapitalize", "none");
         input.setAttribute("spellcheck",     "false");
         input.setAttribute("placeholder",    "");
-
-        input = inputContainer.appendChild(input);
-        shimonokuContainer = card.appendChild(shimonokuContainer);
-        inputContainer = card.appendChild(inputContainer);
-        card = container.appendChild(card);
 
         cardBatch.push(card);
         inputBatch.push(input);
@@ -110,11 +103,11 @@ export function startQuiz(container, data, showNumber) {
     activeContainer = container;
     active = true;
 
-    let cardsContainer = container.appendChild(createNode("div", "quiz-inner"));
+    let cardsContainer = utils.createChildNode(container, "div", "quiz-inner");
     createQuizCards(cardsContainer, data, showNumber);
 
-    let footer = container.appendChild(createNode("div", "quiz-footer"));
-    let finishButton = footer.appendChild(createNodeWithInner("button", "<p>結果を見る</p>", "quiz-finish"))
+    let footer = utils.createChildNode(container, "div", "quiz-footer");
+    let finishButton = utils.createChildNodeWithInner(footer, "button", "<p>結果を見る</p>", "quiz-finish");
     finishButton.addEventListener("click", () => {
         if(correct.length + incorrect.length < cardData.length) {
             if(!window.confirm("まだ未回答の札がいくつかありますが、結果を見ますか？"))
@@ -135,7 +128,7 @@ export function finishQuiz() {
 
     // wow is this some horrible code lol
     let totalKimariCorrect = [0,0,0,0,0,0];
-    let totalKimari        = [0,0,0,0,0,0];
+    let totalKimari        = [0,0,0,0,0,0]; // i can hardcode this
 
     cardData.forEach((card) => {
         totalKimari[card.kimariji_number - 1] ++;

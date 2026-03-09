@@ -21,7 +21,7 @@ document.querySelectorAll(".control").forEach((control) => {
     });
 });
 
-document.querySelector("#start-button").addEventListener(
+document.querySelector("#quiz-start-button").addEventListener(
     "click",
     () => {
         quizContainer.innerHTML = "";
