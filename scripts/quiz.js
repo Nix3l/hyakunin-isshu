@@ -16,7 +16,14 @@ function moveToNextCard() {
     for(let i = 0; i < cardBatch.length - 1; i ++) {
         if(inputBatch[i] === document.activeElement) {
             inputBatch[i + 1].focus();
-            break;
+            return;
+        }
+    }
+
+    for(let i = 0; i < cardBatch.length - 1; i ++) {
+        if(!correct.includes(i)) {
+            inputBatch[i].focus();
+            return;
         }
     }
 }

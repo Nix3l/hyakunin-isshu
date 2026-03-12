@@ -1,8 +1,8 @@
 :root {
-    --control-fg: #000000;
+    --control-fg:  #000000;
     --control-bg0: #ffffff;
     --control-bg1: #c6d4d2;
-    --control-bg-enabled: #a8d8cf;
+    --control-bg-enabled: #70d0bf;
     --control-border: #05342b;
 
     --container-bg: #FFFFFF;
