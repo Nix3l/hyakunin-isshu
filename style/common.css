@@ -1,9 +1,8 @@
 :root {
-    --navbar-bg: #ffffff;
-    --navbar-fg: #000000;
-
-    --control-bg: #ffffff;
-    --control-bg-enabled: #74d7c5;
+    --control-fg: #000000;
+    --control-bg0: #ffffff;
+    --control-bg1: #c6d4d2;
+    --control-bg-enabled: #a8d8cf;
     --control-border: #05342b;
 
     --container-bg: #FFFFFF;
@@ -43,38 +42,6 @@ a {
     text-decoration: none;
 }
 
-.header-container {
-    width: 100%;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 12px 24px;
-
-    background-color: var(--navbar-bg);
-
-    .nav-section {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 24px;
-
-        * {
-            color: var(--navbar-fg);
-        }
-
-        h1 {
-            font-size: 2.4rem;
-        }
-
-        a, p {
-            font-size: 1.5rem;
-        }
-    }
-}
-
 .checkbox-container {
     display: flex;
     flex-direction: row;
@@ -82,7 +49,7 @@ a {
     justify-content: center;
     padding: 0 12px;
 
-    background-color: var(--control-bg);
+    background-color: var(--control-bg1);
 
     cursor: pointer;
 }
@@ -104,13 +71,32 @@ button {
 
     cursor: pointer;
 
-    background-color: #ccc;
+    background-color: var(--control-bg1);
     border: none;
 
     * {
         color: inherit;
         font-size: inherit;
     }
+}
+
+select {
+    background: var(--control-bg1);
+    border: none;
+
+    text-align: center;
+    font-size: 1em;
+
+    min-width: fit-content;
+
+    * {
+        font-size: inherit;
+        color: inherit;
+    }
+}
+
+.main-block {
+    margin-bottom: 18px;
 }
 
 .main-controls {
@@ -133,6 +119,10 @@ button {
         align-items: center;
 
         font-size: 1.5rem;
+
+        * {
+            color: var(--control-fg);
+        }
 
         input[type="number"] {
             -moz-appearance: textfield;
@@ -169,14 +159,10 @@ button {
     }
 
     .control-divider {
-        height: 1.4em;
-        width: 4px;
-        background-color: #ccc;
+        height: 1.2em;
+        width: 2px;
+        background-color: var(--control-fg);
     }
-}
-
-.main-block {
-    margin-bottom: 18px;
 }
 
 .shimonoku-card {
@@ -335,7 +321,23 @@ button {
     animation-timing-function: ease, ease-out;
 }
 
-#quiz-container {
+.viewer-card-container {
+    width: 258px;
+    height: 480px;
+    padding: 24px 24px 0 24px;
+
+    .kaminoku {
+        font-size: 1.15em;
+
+        .kaminoku-kimariji {
+            font-size: 1.45em;
+            font-weight: bold;
+            color: var(--incorrect);
+        }
+    }
+}
+
+#content-container {
     width: 100%;
 
     display: flex;
@@ -345,7 +347,7 @@ button {
     align-items: center;
     gap: 12px;
 
-    .quiz-inner {
+    .quiz-inner, .viewer-inner {
         width: 100%;
         display: flex;
         flex-direction: row;

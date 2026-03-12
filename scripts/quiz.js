@@ -71,7 +71,7 @@ function createQuizCards(container, data, showNumber) {
     data.forEach((curr, index) => {
         let card = utils.createChildNode(container, "div", "quiz-card-container");
 
-        card.appendChild(createShimonokuCard(curr));
+        card.appendChild(createShimonokuCard(curr, showNumber));
 
         let inputContainer = utils.createChildNode(card, "div", "kimariji-input");
         let input = utils.createChildNode(inputContainer, "input", "");
@@ -118,11 +118,14 @@ export function startQuiz(container, data, showNumber) {
     });
 }
 
+export function cancelQuiz() {
+    active = false;
+    activeContainer = null;
+    cardData = [];
+}
+
 export function finishQuiz() {
-    if(!active) {
-        console.error("trying to stop a quiz when none are running");
-        return;
-    }
+    if(!active) return;
 
     let result = Math.round(correct.length / cardData.length * 100);
 

@@ -10,7 +10,7 @@
 </head>
 <body>
     <main>
-        <div class="main-block main-controls">
+        <div class="main-controls">
             <div class="control-section">
                 <input type="number" class="control" id="cards-lower" min=1 max=100 value="1">
                 <p>から</p>
@@ -57,6 +57,31 @@
                 </label>
             </div>
             <div class="control-divider"></div>
+            <div id="button-section" class="control-section">
+                <p>並べ替え</p>
+                <select id="order" class="control">
+                    <option value="shuffle" selected>シャフル</option>
+                    <option value="normal">歌順</option>
+                    <option value="kimariji-order">決まり字順</option>
+                </select>
+            </div>
+            <div class="control-divider"></div>
+            <div id="button-section" class="control-section">
+                <p>文字</p>
+                <select id="kimariji-filter" class="control">
+                    <option value="none" selected>全部</option>
+                    <option value="あ">あ札</option>
+                    <option value="お">お札</option>
+                    <option value="こ">こ札</option>
+                    <option value="さ;せ;し;す;そ">S音</option>
+                    <option value="た">た札</option>
+                    <option value="な">な札</option>
+                    <option value="み">み札</option>
+                    <option value="わ">わ札</option>
+                </select>
+            </div>
+        </div>
+        <div class="main-controls">
             <div id="amount-section" class="control-section">
                 <p>総枚数: <span id="card-amount-indicator">100</span></p>
             </div>
@@ -65,12 +90,12 @@
                 <button type="button" id="quiz-start-button">
                     <p>テストを開始</p>
                 </button>
-                <button type="button" id="show-button">
+                <button type="button" id="viewer-start-button">
                     <p>札を一覧</p>
                 </button>
             </div>
         </div>
-        <div id="quiz-container" class="main-block"></div>
+        <div id="content-container" class="main-block"></div>
     </main>
     <script src="/scripts/main.js" type="module"></script>
 </body>
