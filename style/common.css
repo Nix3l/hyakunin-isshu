@@ -1,9 +1,10 @@
 :root {
     --control-fg:  #000000;
     --control-bg0: #ffffff;
-    --control-bg1: #c6d4d2;
-    --control-bg-enabled: #70d0bf;
-    --control-border: #05342b;
+    --control-bg1: #d5d5d5;
+    --control-bg-enabled: #3fad48;
+    --control-fg-enabled: #1d251d;
+    --control-border: #000000;
 
     --container-bg: #FFFFFF;
     --card-bg:      #FFFFFF;
@@ -60,6 +61,11 @@ input[type="checkbox"].custom-checkbox {
 
 input.custom-checkbox:checked + .checkbox-container {
     background-color: var(--control-bg-enabled);
+    color: var(--control-fg-enabled);
+
+    * {
+        color: inherit;
+    }
 }
 
 button {
