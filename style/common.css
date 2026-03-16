@@ -225,11 +225,16 @@ select {
     }
 
     p.number-indicator {
+        display: none;
         position: absolute;
         bottom: 6px;
         left: 12px;
 
         font-size: 18px;
+    }
+
+    p.number-indicator.show-number {
+        display: block;
     }
 }
 

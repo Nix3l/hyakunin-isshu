@@ -55,6 +55,13 @@ document.querySelectorAll(".control").forEach((control) => {
     });
 });
 
+showNumber.addEventListener("input", () => {
+    document.querySelectorAll("p.number-indicator").forEach((item) => {
+        if(showNumber.checked) item.classList.add("show-number");
+        else item.classList.remove("show-number");
+    });
+});
+
 document.querySelector("#quiz-start-button").addEventListener(
     "click",
     () => {
