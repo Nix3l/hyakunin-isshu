@@ -1,4 +1,4 @@
-import { createNode, createNodeWithInner } from "/scripts/utils.js";
+import { createNode, createNodeWithInner } from "./scripts/utils.js";
 
 export function createShimonokuCard(card, showNumber) {
     let shimonokuContainer = createNode("div", "shimonoku-card");
