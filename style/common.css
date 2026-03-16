@@ -23,9 +23,12 @@
     font-family: var(--font-sans-serif), sans-serif;
 }
 
+html {
+    font-size: .9vw;
+}
+
 body {
     min-height: 100vh;
-    font-size: 20px;
 }
 
 header, main {
