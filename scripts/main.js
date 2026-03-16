@@ -36,6 +36,7 @@ function getDesiredCards() {
             if(order.value === "normal") return 0;
             if(order.value === "shuffle") return 0;
             if(order.value === "kimariji-order") return a.kimariji > b.kimariji;
+            if(order.value === "shimonoku") return a.shimonoku > b.shimonoku;
 
             console.error(`cant sort by unknown method ${order.value}`);
             return 0;
