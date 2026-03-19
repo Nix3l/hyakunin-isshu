@@ -4,83 +4,186 @@ import { createShimonokuCard } from "./generator.js";
 let active = false;
 let activeContainer = null;
 
-// id probably do this whole thing differently if i were to refactor this.
-// maybe make these into an array of objects rather than a bunch of separate arrays
-let cardData   = [];
-let cardBatch  = [];
-let inputBatch = [];
-let correct    = [];
-let incorrect  = [];
+const CardStatus = Object.freeze({
+    UNATTEMPTED:         0,
+    ATTEMPTED_INCORRECT: 1,
+    ATTEMPTED_CORRECT:   2,
+    CORRECT:             3,
+});
+
+class Card {
+    #status = CardStatus.UNATTEMPTED;
+
+    constructor(container, inputField, cardData, index) {
+        this.container = container;
+        this.inputField = inputField;
+        this.data = cardData;
+        this.index = index;
+
+        this.inputField.addEventListener("input", () => {
+            if(this.inputIsCorrect()) {
+                this.markCorrect();
+                moveToNextCard();
+            } else {
+                cardBatch.forEach((card, index) => {
+                    if(index === this.index || card === this) return;
+
+                    if(this.inputField.value === card.data.kimariji_romaji || this.inputField.value === card.data.kimariji) {
+                        this.markIncorrect();
+                        moveToNextCard();
+                    }
+                });
+            }
+        });
+
+        this.inputField.addEventListener("keyup", (event) => {
+            if(event.key !== 'Enter') return;
+
+            if(this.inputIsCorrect) this.markCorrect();
+            else this.markIncorrect();
+
+            moveToNextCard();
+        });
+    }
+
+    get status() {
+        return this.#status;
+    }
+
+    set status(newStatus) {
+        if(this.#status === newStatus) return;
+
+        let invalid = false;
+        if(this.#status === CardStatus.CORRECT || this.#status === CardStatus.ATTEMPTED_CORRECT) invalid = true;
+        if(this.#status !== CardStatus.UNATTEMPTED && newStatus === CardStatus.CORRECT) invalid = true;
+        if(this.#status !== CardStatus.ATTEMPTED_INCORRECT && newStatus === CardStatus.ATTEMPTED_CORRECT) invalid = true;
+        if(invalid) {
+            console.error(`attempting to move to invalid state ${newState} from ${this.#status}`);
+            return;
+        }
+
+        this.#status = newStatus;
+        switch(this.#status) {
+            case CardStatus.UNATTEMPTED:
+                this.container.classList.remove("incorrect");
+                this.container.classList.remove("correct");
+                this.inputField.removeAttribute("disabled");
+            break;
+            case CardStatus.ATTEMPTED_INCORRECT:
+                this.container.classList.add("incorrect");
+                this.container.classList.remove("correct");
+                this.inputField.removeAttribute("disabled");
+            break;
+            case CardStatus.CORRECT:
+            case CardStatus.ATTEMPTED_CORRECT:
+                this.container.classList.remove("incorrect");
+                this.container.classList.add("correct");
+                this.inputField.setAttribute("disabled", "");
+            break;
+        }
+    }
+
+    focus() {
+        if(this.#status === CardStatus.ATTEMPTED_CORRECT || this.#status === CardStatus.CORRECT) {
+            console.error("attempting to focus correctly answered card");
+            return;
+        }
+
+        this.inputField.focus();
+    }
+
+    inputIsCorrect() {
+        return (
+            this.inputField.value === this.data.kimariji_romaji ||
+            this.inputField.value === this.data.kimariji
+        );
+    }
+
+    markCorrect() {
+        if(this.#status === CardStatus.CORRECT || this.#status === CardStatus.ATTEMPTED_CORRECT) {
+            console.error("attempting to mark already correct card as correct");
+            return;
+        }
+
+        if(this.#status === CardStatus.UNATTEMPTED) this.status = CardStatus.CORRECT;
+        else if(this.#status === CardStatus.ATTEMPTED_INCORRECT) this.status = CardStatus.ATTEMPTED_CORRECT;
+
+        this.inputField.value = this.data.kimariji;
+
+        if(numCardsWithStatus([CardStatus.CORRECT, CardStatus.ATTEMPTED_CORRECT]) === cardBatch.length)
+            finishQuiz();
+    }
+
+    markIncorrect() {
+        if(this.#status === CardStatus.CORRECT || this.#status === CardStatus.ATTEMPTED_CORRECT) {
+            console.error("attempting to mark already correct card as incorrect");
+            return;
+        }
+
+        this.status = CardStatus.ATTEMPTED_INCORRECT;
+        this.inputField.value = "";
+    }
+}
+
+let cardBatch = [];
 
 function moveToNextCard() {
     for(let i = 0; i < cardBatch.length - 1; i ++) {
-        if(inputBatch[i] === document.activeElement) {
-            inputBatch[i + 1].focus();
+        if(cardBatch[i].inputField === document.activeElement) {
+            cardBatch[i + 1].focus();
             return;
         }
     }
 
     for(let i = 0; i < cardBatch.length - 1; i ++) {
-        if(!correct.includes(i)) {
-            inputBatch[i].focus();
+        if(!(cardBatch[i].status === CardStatus.CORRECT || cardBatch[i].status === CardStatus.ATTEMPTED_CORRECT)) {
+            cardBatch[i].focus();
             return;
         }
     }
 }
 
-function markCardCorrect(i) {
-    cardBatch[i].classList.add("correct");
-    inputBatch[i].setAttribute("disabled", "");
-    inputBatch[i].value = cardData[i].kimariji;
+function numCardsWithStatus(arr) {
+    let num = 0;
 
-    if(incorrect.includes(i)) incorrect = incorrect.filter(curr => curr !== i);
-    correct.push(i);
-
-    if(correct.length == cardBatch.length) finishQuiz();
-}
-
-function markCardIncorrect(i) {
-    cardBatch[i].classList.add("incorrect");
-    inputBatch[i].value = "";
-    inputBatch[i].addEventListener("focus", () => {
-        cardBatch[i].classList.remove("incorrect");
-        inputBatch[i].removeEventListener("focus");
+    cardBatch.forEach((card) => {
+        arr.forEach((status) => {
+            if(card.status === status) num ++;
+        })
     });
 
-    incorrect.push(i);
+    return num;
 }
 
-function attachCardEvents(input, card, index) {
-    input.addEventListener("input", () => {
-        if(input.value === card.kimariji_romaji || input.value === card.kimariji) {
-            markCardCorrect(index);
-            moveToNextCard();
-        }
-    });
+function numAttemptedCards() {
+    return numCardsWithStatus([
+        CardStatus.ATTEMPTED_INCORRECT,
+        CardStatus.ATTEMPTED_CORRECT,
+        CardStatus.CORRECT,
+    ]);
+}
 
-    input.addEventListener("keyup", (event) => {
-        if(event.key !== 'Enter') return;
+function cardsWithStatus(arr) {
+    return cardBatch.filter((card) => {
+        let allow = false;
 
-        if(input.value === card.kimariji_romaji || input.value === card.kimariji) {
-            markCardCorrect(index);
-        } else {
-            markCardIncorrect(index);
-        }
+        arr.forEach(status => {
+            if(card.status === status) allow = true;
+        });
 
-        moveToNextCard();
+        return allow;
     });
 }
 
 function createQuizCards(container, data, showNumber) {
     cardBatch  = [];
-    inputBatch = [];
 
     data.forEach((curr, index) => {
-        let card = utils.createChildNode(container, "div", "quiz-card-container");
+        let cardContainer = utils.createChildNode(container, "div", "quiz-card-container");
 
-        card.appendChild(createShimonokuCard(curr, showNumber));
+        cardContainer.appendChild(createShimonokuCard(curr, showNumber));
 
-        let inputContainer = utils.createChildNode(card, "div", "kimariji-input");
+        let inputContainer = utils.createChildNode(cardContainer, "div", "kimariji-input");
         let input = utils.createChildNode(inputContainer, "input", "");
         input.setAttribute("type",           "text");
         input.setAttribute("autocomplete",   "off");
@@ -89,13 +192,10 @@ function createQuizCards(container, data, showNumber) {
         input.setAttribute("spellcheck",     "false");
         input.setAttribute("placeholder",    "");
 
-        cardBatch.push(card);
-        inputBatch.push(input);
-
-        attachCardEvents(input, curr, index);
+        cardBatch.push(new Card(cardContainer, input, curr, index));
     });
 
-    inputBatch[0].focus();
+    cardBatch[0].focus();
 }
 
 export function startQuiz(container, data, showNumber) {
@@ -104,9 +204,6 @@ export function startQuiz(container, data, showNumber) {
         return;
     }
 
-    cardData = data;
-    correct = [];
-    incorrect = [];
     activeContainer = container;
     active = true;
 
@@ -116,7 +213,7 @@ export function startQuiz(container, data, showNumber) {
     let footer = utils.createChildNode(container, "div", "quiz-footer");
     let finishButton = utils.createChildNodeWithInner(footer, "button", "<p>結果を見る</p>", "quiz-finish");
     finishButton.addEventListener("click", () => {
-        if(correct.length + incorrect.length < cardData.length) {
+        if(numAttemptedCards() < cardBatch.length) {
             if(!window.confirm("まだ未回答の札がいくつかありますが、結果を見ますか？"))
                 return;
         }
@@ -128,24 +225,26 @@ export function startQuiz(container, data, showNumber) {
 export function cancelQuiz() {
     active = false;
     activeContainer = null;
-    cardData = [];
+    cardBatch = [];
 }
 
 export function finishQuiz() {
     if(!active) return;
 
-    let result = Math.round(correct.length / cardData.length * 100);
+    let correct = cardsWithStatus([CardStatus.CORRECT]);
+
+    let result = Math.round(correct.length / cardBatch.length * 100);
 
     // wow is this some horrible code lol
     let totalKimariCorrect = [0,0,0,0,0,0];
     let totalKimari        = [0,0,0,0,0,0]; // i can hardcode this
 
-    cardData.forEach((card) => {
-        totalKimari[card.kimariji_number - 1] ++;
+    cardBatch.forEach((card) => {
+        totalKimari[card.data.kimariji_number - 1] ++;
     });
 
-    correct.forEach((_, index) => {
-        totalKimariCorrect[cardData[index].kimariji_number - 1] ++;
+    correct.forEach((card) => {
+        totalKimariCorrect[card.data.kimariji_number - 1] ++;
     });
 
     activeContainer.innerHTML = "";
@@ -163,7 +262,5 @@ export function finishQuiz() {
 
     activeContainer.innerHTML = out;
 
-    active = false;
-    activeContainer = null;
-    cardData = [];
+    cancelQuiz();
 }
